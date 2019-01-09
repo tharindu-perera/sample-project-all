@@ -1,0 +1,19 @@
+rootProject.name = 'sample-project-for-all'
+
+include ":main-method-testing-java"
+include ":functional-reactive-java"
+include ":java-json-path"
+include ":java-mongo"
+include ":kotlin-mongo"
+//include 'lib-common'
+//include 'lib-test-common'
+//include ':service-customer:client'
+include 'kotlin-mongo-kafka-web'
+//project(":java-mongo").projectDir =  new File(settingsDir,"java-mongo")
+include 'Kafka-Producer-Java'
+findProject(':Kafka-Producer-Java')?.name = 'Kafka-Producer'
+include 'justTest'
+include 'spring-test'
+include 'spring-test'
+include 'rxJava'
+

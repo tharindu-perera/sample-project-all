@@ -1,0 +1,54 @@
+# Comment this out to run locally.
+#spring.profiles.active: secure-kafka
+
+server:
+  port: 8085
+spring:
+  data:
+    mongodb:
+      uri: ${MONGO_URI:mongodb://localhost:27017/test}
+  cloud:
+    inetutils:
+      ignoredInterfaces:
+        - docker0
+        - veth.*
+  # Spring Kafka config, see application-secure-kafka for more.
+  kafka:
+#    client-id: ${spring.application.name}
+#    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    consumer:
+      group-id: test
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#    producer:
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#
+## Kafka Topics
+#kafka-topics:
+#  edi-inbound: edi-ingestion
+#  irf-cif: irf-cif-ingestion
+#  irf-csm: irf-csm-ingestion
+#  irf-umler: irf-umler-ingestion
+#  irf-stcc: irf-stcc-ingestion
+#  irf-rm: irf-rm-ingestion
+
+# Service Discovery
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+#    register-with-eureka: true
+#    fetch-registry: true
+#  instance:
+#    hostname: ${LOCAL_IP:http://localhost}
+#    preferIpAddress: ${PREFER_IP_ADDRESS:true}
+
+# Logging
+logging:
+  level:
+    org.springframework: ${LOG_LEVEL_SPRING:warn}
+    org.apache.kafka: ${LOG_LEVEL_KAFKA:warn}
+    org.mongodb: ${LOG_LEVEL_MONGO:warn}
+
+

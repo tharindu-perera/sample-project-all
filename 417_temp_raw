@@ -1,0 +1,96 @@
+
+{
+  "X12":{
+
+    "TS_418":{
+        "LOOP_ID_W1":{
+        "W1-BlockIdentification":{
+          "W101-BlockIdentifier":"DAIR"
+        },
+        "LOOP_ID_W1_W2":[
+
+
+          {
+            "LOOP_ID_W1_W2_LH1":{
+              "LH2-HazardousClassificationInformation":{
+                "LH201-HazardousClassificationCode":3,
+                "LH202-HazardousClassQualifier":"P"
+              },
+              "PER-AdministrativeCommunicationsContact":[
+                {
+                  "PER01-ContactFunctionCode":"HM",
+                  "PER03-CommunicationNumberQualifier":"TE",
+                  "PER02-Name": null,
+                  "PER04-CommunicationNumber":333
+                },
+                {
+                  "PER01-ContactFunctionCode":"QQQ",
+                  "PER02-Name":"CHEMTREC  CCN223067",
+                  "PER04-CommunicationNumber":222
+                }
+
+              ]
+            },
+
+            "W3-ConsigneeInformation":{
+              "W301-WaybillNumber":979797,
+              "W303-AbbreviatedCustomerName":"SIOUXLENELIV",
+              "W302-Date":"2018-03-23",
+              "W305-StateOrProvinceCode":"SD",
+              "W304-CityName":"HUDSON"
+            }  ,
+            "PER-AdministrativeCommunicationsContact":{
+              "PER01-ContactFunctionCode":"HM",
+              "PER03-CommunicationNumberQualifier":"TE",
+              "PER02-Name":"CHEMTREC  CCN223067",
+              "PER04-CommunicationNumber":1111
+            }
+          }
+        ]
+      }
+    }
+  },
+  "errors":[
+    {
+      "path":"X12/TS_418/LOOP_ID_W1/LOOP_ID_W1_W2/W2-EquipmentIdentification/W203-CommodityCode",
+      "level":"warn",
+      "message":"Invalid Commodity, CommodityCode: 2046510"
+    },
+    {
+      "path":"X12/TS_418/LOOP_ID_W1/LOOP_ID_W1_W2/W2-EquipmentIdentification/W203-CommodityCode",
+      "level":"warn",
+      "message":"Invalid Commodity, CommodityCode: 4909152"
+    },
+    {
+      "path":"X12/TS_418/LOOP_ID_W1/LOOP_ID_W1_W2/W2-EquipmentIdentification/W203-CommodityCode",
+      "level":"warn",
+      "message":"Invalid Commodity, CommodityCode: 2046510"
+    },
+    {
+      "path":"X12/TS_418/LOOP_ID_W1/LOOP_ID_W1_W2/W2-EquipmentIdentification/W203-CommodityCode",
+      "level":"warn",
+      "message":"Invalid Commodity, CommodityCode: 4909152"
+    },
+    {
+      "path":"X12/TS_418/LOOP_ID_W1/LOOP_ID_W1_W2/W2-EquipmentIdentification/W203-CommodityCode",
+      "level":"warn",
+      "message":"Invalid Commodity, CommodityCode: 4909152"
+    },
+    {
+      "path":"X12/TS_418/LOOP_ID_W1/LOOP_ID_W1_W2/LOOP_ID_W1_W2_LH1/LH1-HazardousIdentificationInformation/LH105-CommodityCode",
+      "level":"warn",
+      "message":"Invalid Commodity, CommodityCode: 4909152"
+    },
+    {
+      "path":"X12/TS_418/LOOP_ID_W1/LOOP_ID_W1_W2/LOOP_ID_W1_W2_LH1/LH1-HazardousIdentificationInformation/LH105-CommodityCode",
+      "level":"warn",
+      "message":"Invalid Commodity, CommodityCode: 4909152"
+    },
+    {
+      "path":"X12/TS_418/LOOP_ID_W1/LOOP_ID_W1_W2/LOOP_ID_W1_W2_LH1/LH1-HazardousIdentificationInformation/LH105-CommodityCode",
+      "level":"warn",
+      "message":"Invalid Commodity, CommodityCode: 4909152"
+    }
+  ]
+}
+

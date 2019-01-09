@@ -1,0 +1,9 @@
+kafka-topics.irf-cif: test-topic
+
+# Logging
+logging:
+  level:
+    com.cd: info
+    # suppress most of the logs that are not ours
+    org: warn
+    com: warn

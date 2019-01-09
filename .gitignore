@@ -1,0 +1,16 @@
+
+.DS_Store
+.gradle/
+.idea/
+build/
+out/
+data
+gradlew.bat
+*.iml
+deploymentBundle.zip
+*.class
+*/altova/Mapping.jar
+logs/
+edi-files/
+irf-files/
+scripts/dump

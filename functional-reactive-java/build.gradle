@@ -1,0 +1,13 @@
+
+apply plugin:'application'
+mainClassName = "com.Reactive"
+//jar {
+//    baseName = 'app'
+//    version = '1'
+//}
+dependencies {
+//    compile 'com.fasterxml.jackson.module:jackson-module-kotlin'
+//    compile group: 'com.jayway.jsonpath', name: 'json-path', version: '2.4.0'
+    compile group: 'io.projectreactor', name: 'reactor-core', version: '3.0.5.RELEASE'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
