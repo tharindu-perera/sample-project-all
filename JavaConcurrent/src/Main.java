@@ -18,16 +18,16 @@ import java.util.concurrent.Future;
  of the just-in-time compiler. You might want to use -Xint.
  */
 public final class Main {
-    private static final Integer[] SLEEPING_TIME = new Integer[]{10000,1000,20000};
+    private static final Integer[] SLEEPING_TIME = new Integer[]{10000,1000,20000,1000};
     /** Run this tool. */
     public static final void main(String... args) {
         Main checker = new Main();
         try {
 //            log("Parallel, report each as it completes:");
-//            checker.pingAndReportEachWhenKnown();
+            checker.pingAndReportEachWhenKnown();
 
 //            log("Parallel, report all at end:");
-            checker.pingAndReportAllAtEnd();
+//            checker.pingAndReportAllAtEnd();
 //
 //            log("Sequential, report each as it completes:");
 //            checker.pingAndReportSequentially();
@@ -52,7 +52,7 @@ public final class Main {
 
         for(Integer url : SLEEPING_TIME){
             Future<PingResult> future = compService.take();
-            log(future.get());
+            log(future. get());
         }
 
         executor.shutdown(); //always reclaim resources
@@ -60,7 +60,7 @@ public final class Main {
 
 
     void pingAndReportAllAtEnd() throws InterruptedException, ExecutionException {
-        int numThreads = 4; //max 4 threads
+        int numThreads = 40; //max 4 threads
         ExecutorService executor = Executors.newFixedThreadPool(numThreads);
         Collection<Callable<PingResult>> tasks = new ArrayList<>();
         int x=1;
@@ -78,13 +78,9 @@ public final class Main {
         executor.shutdown(); //always reclaim resources
     }
 
-
-
-
     private static void log(Object msg){
         System.out.println(Objects.toString(msg));
     }
-
 
     private final class Task implements Callable<PingResult> {
         Task(Integer ORDER,Integer TIMING){

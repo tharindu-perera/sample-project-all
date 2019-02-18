@@ -1,2 +1,77 @@
 server:
-  port: 9080
+  port: ${APPLICATION_PORT:8094}
+spring:
+  application:
+    name: kafka
+  cloud:
+    inetutils:
+      ignoredInterfaces:
+        - docker0
+        - veth.*
+    # Spring Kafka config, see application-secure-kafka for more.
+  kafka:
+    client-id: ${spring.application.name}
+    bootstrap-servers: http://internal-aa603299e1ab711e9b1a60e4f9c0b1f9-359291218.us-east-1.elb.amazonaws.com:9092
+#    bootstrap-servers: dev.kafka.datafoundation.nonprod.torq.trans.apps.ge.com/:9092
+    consumer:
+      group-id: ${spring.application.name}
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+kafka-topics:
+  edi-inbound: edi-ingestion
+  irf-cif: irf-cif-ingestion
+  irf-csm: irf-csm-ingestion
+  irf-umler: irf-umler-ingestion
+  irf-stcc: irf-stcc-ingestion
+  irf-rm: irf-rm-ingestion
+
+irf-scheduler-interval: 30000
+irf-umler-scheduler-interval: 3600000
+edi-scheduler-interval: 30000
+edi:
+  ftp-prefix: /
+  ftp-success-prefix: SUCCESS
+  ftp-failure-prefix: FAILED
+irf:
+  types: CIF,CSM,ROAD,STCC,UMLER
+  ftp-prefix: /IRF
+  ftp-success-prefix: SUCCESS
+  ftp-failure-prefix: FAILED
+ftp:
+  hostname: ftp-stg.shipxpress.net
+  port: 21
+  username: shalinda
+  password: ekNzmx
+df-elastic:
+  host: https://6903cb15d12a1cb8e93adedb31edccc5.us-west-2.aws.found.io:9243
+  suffix: _search?
+  elastic_waiting: 5m
+  umler:
+    index: asset
+    type: hopper
+  recordsPerRequest: 1000
+  Authorization:
+    username: tms
+    password: TMSP@$$w0rd!
+
+# Service Discovery
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    hostname: ${LOCAL_IP:http://localhost}
+    preferIpAddress: ${PREFER_IP_ADDRESS:true}
+
+# Logging
+logging:
+  level:
+    org.springframework: ${LOG_LEVEL_SPRING:warn}
+    org.apache.kafka: ${LOG_LEVEL_KAFKA:warn}
+    org.mongodb: ${LOG_LEVEL_MONGO:warn}

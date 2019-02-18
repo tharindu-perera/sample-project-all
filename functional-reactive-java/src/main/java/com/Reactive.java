@@ -1,10 +1,11 @@
 package com;
 
-import com.sun.tools.internal.ws.wsdl.document.http.HTTPAddress;
+ import org.json.JSONObject;
 import org.reactivestreams.Publisher;
 import reactor.core.Disposable;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+import sun.net.www.http.HttpClient;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -14,9 +15,50 @@ import static java.lang.Thread.sleep;
 
 public class Reactive {
     public static void main(String[] args) {
-        lesson1();
+        fluxToIterate4();
 
     }
+    public static void fluxToIterate4() {
+        Mono<Integer> map = Mono.from(Flux.range(1, 10)).
+                map(id -> id).
+                map(user -> user + 1).map(x-> {x});
+
+
+
+        System.out.println(  map );
+
+
+    }
+
+
+
+
+
+
+
+
+    public static void fluxToIterate3() {
+        Flux.range(1, 10).
+                map(id -> id).
+                map(user -> user + 1).
+                collectList().     // will convert the Flux<UserDetails> into a Mono<List<UserDetails>>
+                map(listUserDetails -> {
+            if (true) {
+                return Flux.range(1, 10).
+                        map(id -> id).
+                        map(user -> user + 1).
+                        collectList();
+                //return Mono.just("xx");
+                // return "xxx";
+            } else {
+                return Mono.just("yy");
+            }
+
+        }).subscribe(x->System.out.println(x));
+    }
+
+
+
     public static void lesson2() {
         Mono.just("xxx").subscribe(
                 successValue -> {System.out.println(successValue);

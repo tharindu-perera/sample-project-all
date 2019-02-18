@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Kafka-Producer-Java" />
+            <option value="$PROJECT_DIR$/Kafka-Tute-Java" />
             <option value="$PROJECT_DIR$/functional-reactive-java" />
             <option value="$PROJECT_DIR$/java-json-path" />
             <option value="$PROJECT_DIR$/java-mongo" />
