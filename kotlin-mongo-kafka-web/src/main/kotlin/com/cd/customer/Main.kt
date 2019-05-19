@@ -1,18 +1,14 @@
 package com.cd
 
+
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
+import org.springframework.scheduling.annotation.EnableScheduling
 
 @SpringBootApplication
-class Main
+@EnableScheduling
+class MonoApplication
 
 fun main(args: Array<String>) {
-    runApplication<Main>(*args)
-    val groupLevel = "a"
-    val dateTimeFormatter = "b"
-    val sofferedDateTimeString = groupLevel+dateTimeFormatter
-    val s = "abc"
-//    println("$s.length is ${s.length}")
-
-    println("$groupLevel $dateTimeFormatter ")
+    runApplication<MonoApplication>(*args)
 }

@@ -12,7 +12,7 @@ class CustomerRoutes(
         const val CUSTOMER_ID = "id"
         const val CUSTOMER_INDUSTRY_REFERENCE_ID = "customerIrfId"
         const val CUSTOMER_INDUSTRY_REFERENCE_NAME = "customerIrfName"
-        const val BASE_PATH = "/api/v1/customer"
+        const val BASE_PATH = "/customer"
         const val SEARCH_VAL = "searchVal"
         const val SORT_BY = "sortBy"
         const val SORT_ORDER = "sortOrder"

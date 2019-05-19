@@ -8,9 +8,10 @@ import org.springframework.data.mongodb.core.mapping.Document
 
 @Document
 data class Customer(
-    @Id val id: String?, // Reference: ID BIGINT PRIMARY KEY NOT NULL,
-//    val customerId: String, // Reference: PD_ID VARCHAR(9) NULL,
-//    val addressTypeKey: String, // Reference: PD_ADDRESS_TYPE_KEY VARCHAR(3) NULL,
+    @Id
+    val id: String?, // Reference: ID BIGINT PRIMARY KEY NOT NULL,
+    val customerId: String="ccc", // Reference: PD_ID VARCHAR(9) NULL,
+    val railroadId: String, // Reference: PD_ADDRESS_TYPE_KEY VARCHAR(3) NULL,
 //    val customerType: String, // Reference: PD_PATRON_TYPE VARCHAR(1) NULL,
 //    val name: String, // Reference: PD_NAME VARCHAR(35) NOT NULL,
 //    val abbrevName: String? = null, // Reference: PD_ABREV_NAME VARCHAR(12) NULL,

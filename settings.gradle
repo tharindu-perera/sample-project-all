@@ -17,4 +17,6 @@ include 'Kafka-Tute-Java'
 include 'spring-test'
 include 'spring-test'
 include 'rxJava'
+include 'mysql-db'
+include 'generics'
 

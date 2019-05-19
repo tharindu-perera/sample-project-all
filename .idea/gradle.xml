@@ -12,14 +12,26 @@
             <option value="$PROJECT_DIR$/Kafka-Producer-Java" />
             <option value="$PROJECT_DIR$/Kafka-Tute-Java" />
             <option value="$PROJECT_DIR$/functional-reactive-java" />
+            <option value="$PROJECT_DIR$/generics" />
             <option value="$PROJECT_DIR$/java-json-path" />
             <option value="$PROJECT_DIR$/java-mongo" />
             <option value="$PROJECT_DIR$/justTest" />
             <option value="$PROJECT_DIR$/kotlin-mongo" />
             <option value="$PROJECT_DIR$/kotlin-mongo-kafka-web" />
             <option value="$PROJECT_DIR$/main-method-testing-java" />
+            <option value="$PROJECT_DIR$/mysql-db" />
             <option value="$PROJECT_DIR$/rxJava" />
             <option value="$PROJECT_DIR$/spring-test" />
+          </set>
+        </option>
+        <option name="useAutoImport" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/project-reactor" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/project-reactor" />
           </set>
         </option>
         <option name="useAutoImport" value="true" />

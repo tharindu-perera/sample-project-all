@@ -1,0 +1,102 @@
+{
+  "X12": {
+
+    "TS_418": {
+      "ST-TransactionSetHeader": {
+        "ST01-TransactionSetIdentifierCode": 418,
+        "ST02-TransactionSetControlNumber": 888620001
+      },
+      "BAX-BeginningSegmentForAdvanceConsistAndTransportationAutomaticEquipmentId": {
+        "BAX06-InterchangeTrainIdentification": "BDRV",
+        "BAX01-StandardPointLocationCode": 192581,
+        "BAX04-Date": "2018-10-13",
+        "BAX02-TypeOfConsistCode": "Y",
+        "BAX03-DateTimeQualifier": 140,
+        "BAX05-Time": "14:05:00"
+      },
+      "SE-TransactionSetTrailer": {
+        "SE01-NumberOfIncludedSegments": 16,
+        "SE02-TransactionSetControlNumber": 888620001
+      },
+      "LOOP_ID_W1": {
+        "W1-BlockIdentification": {
+          "W101-BlockIdentifier": "BDRV"
+        },
+        "LOOP_ID_W1_W2": [
+          {
+            "W3-ConsigneeInformation": {
+              "W301-WaybillNumber": 410793,
+              "W303-AbbreviatedCustomerName": "ALSPOWER",
+              "W302-Date": "2018-10-02",
+              "W305-StateOrProvinceCode": "NJ",
+              "W304-CityName": "PHILLIPSBURG (BDRV)"
+            },
+            "W2-EquipmentIdentification": {
+              "W201-EquipmentInitial": "SOU",
+              "W203-CommodityCode": 1421990,
+              "W202-EquipmentNumber": 105248,
+              "W205-EquipmentStatusCode": "E",
+              "W204-EquipmentDescriptionCode": "RR"
+            },
+            "W5-CarrierAndRouteInformation": {
+              "W501-StandardCarrierAlphaCode": "NS"
+            },
+            "W4-ConsignorInformation": {
+              "W401-AbbreviatedCustomerName": "AGT-",
+              "W403-FreightStationAccountingCode": 59143,
+              "W402-StandardCarrierAlphaCode": "NS",
+              "W404-CityName": "CHULA",
+              "W405-StateOrProvinceCode": "GA"
+            }
+          },
+          {
+            "W2-EquipmentIdentification": {
+              "W201-EquipmentInitial": "SOU",
+              "W203-CommodityCode": 1421990,
+              "W202-EquipmentNumber": 109998,
+              "W205-EquipmentStatusCode": "E",
+              "W204-EquipmentDescriptionCode": "RR"
+            },
+            "W5-CarrierAndRouteInformation": {
+              "W501-StandardCarrierAlphaCode": "NS"
+            },
+            "W4-ConsignorInformation": {
+              "W401-AbbreviatedCustomerName": "AGT-",
+              "W403-FreightStationAccountingCode": 59143,
+              "W402-StandardCarrierAlphaCode": "NS",
+              "W404-CityName": "CHULA",
+              "W405-StateOrProvinceCode": "GA"
+            }
+          },
+          {
+            "W3-ConsigneeInformation": {
+              "W301-WaybillNumber": 788912,
+              "W303-AbbreviatedCustomerName": "ALSPOWER2",
+              "W302-Date": "2018-09-19",
+              "W305-StateOrProvinceCode": "NJ",
+              "W304-CityName": "PHILLIPSBURG (BDRV)"
+            },
+            "W2-EquipmentIdentification": {
+              "W201-EquipmentInitial": "NS",
+              "W203-CommodityCode": 1421990,
+              "W202-EquipmentNumber": 151524,
+              "W205-EquipmentStatusCode": "E",
+              "W204-EquipmentDescriptionCode": "RR"
+            },
+            "W5-CarrierAndRouteInformation": {
+              "W501-StandardCarrierAlphaCode": "NS"
+            },
+            "W4-ConsignorInformation": {
+              "W401-AbbreviatedCustomerName": "AGT-",
+              "W403-FreightStationAccountingCode": 59220,
+              "W402-StandardCarrierAlphaCode": "NS",
+              "W404-CityName": "JACKSONVILLE",
+              "W405-StateOrProvinceCode": "FL"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "raw-EDI": "ISA*04*SW418     *00*          *02*NS  TDCC       *02*CMMXBDRV       *181013*1415*U*00703*006081993*0*P**\nGS*IC*NS*BDRV*20181013*1415*88862*X*004010\nST*418*888620001\nBAX*192581*Y*140*20181013*1405*BDRV\nW1*BDRV\nW2*SOU*105248*1421990*RR*E\nW3*410793*20181002*ALSPOWER*PHILLIPSBURG (BDRV)*NJ\nW4*AGT-*NS*59143*CHULA*GA\nW5*NS\nW2*SOU*109998*1421990*RR*E\nW3*410795*20181002*ALSPOWER*PHILLIPSBURG (BDRV)*NJ\nW4*AGT-*NS*59143*CHULA*GA\nW5*NS\nW2*NS*151524*1421990*RR*E\nW3*788912*20180919*ALSPOWER*PHILLIPSBURG (BDRV)*NJ\nW4*AGT-*NS*59220*JACKSONVILLE*FL\nW5*NS\nSE*0016*888620001\nGE*1*88862\nIEA*1*006081993\n"
+}

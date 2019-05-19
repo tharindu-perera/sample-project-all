@@ -7,23 +7,32 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Date;
 import java.util.List;
+
 import org.springframework.data.mongodb.core.query.Query;
 
 
-public interface CustomerRepository extends MongoRepository<CustomerIndustryReference, String> {
+  interface CustomerRepository extends MongoRepository<CustomerIndustryReference, String> {
 
-    List<CustomerIndustryReference> findBynameOrderByCreateddateDesc (String stfr );
-//    public List<Customer> findByLastName(String lastName);
-
+    List<CustomerIndustryReference> findBynameOrderByCreateddateDesc(String stfr);
 }
-//abstract class CustomRule15RepositoryImpl implements CustomerRepository  {
+
+
+
+interface   RWCRepository extends MongoRepository<RWC, String>{
+    List<RWC> findAllBy( );
+        }
+
+
+
+
+//  class RWCRepositoryw implements RWCRepository  {
 //@Autowired
 //    MongoTemplate  mongoTemplate;
-////    @Override
-////    public List<CustomerIndustryReference> findByName(String firstName) {
-////        Query query
-////                =new Query();
-////        List animals = mongoTemplate.find(query, CustomerIndustryReference.class);
-////        return null;
-////    }
+//    @Override
+//    public List<RWC>findByname(String firstName) {
+//        Query query
+//                =new Query();
+//        List animals = mongoTemplate.find(query, RWC.class);
+//        return null;
+//    }
 //}

@@ -4,6 +4,8 @@
 server:
   port: 8085
 spring:
+  http:
+    log-request-details: true
   data:
     mongodb:
       uri: ${MONGO_URI:mongodb://localhost:27017/test}
@@ -50,5 +52,10 @@ logging:
     org.springframework: ${LOG_LEVEL_SPRING:warn}
     org.apache.kafka: ${LOG_LEVEL_KAFKA:warn}
     org.mongodb: ${LOG_LEVEL_MONGO:warn}
+    org.springframework.web.reactive.function.client.ExchangeFunctions: DEBUG
 
 
+
+monoapp:
+  service:
+   host: localhost:8085

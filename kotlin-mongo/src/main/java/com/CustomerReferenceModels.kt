@@ -1,13 +1,8 @@
 package com
 
-import com.Address
-import com.SupportsUnknownFieldsAsAdditionalFields
-import com.SupportsUnknownFieldsTransparently
 import com.fasterxml.jackson.annotation.JsonIgnore
-import org.apache.commons.lang3.time.DateUtils
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
-import java.time.LocalDateTime
 import java.util.*
 
 /**
