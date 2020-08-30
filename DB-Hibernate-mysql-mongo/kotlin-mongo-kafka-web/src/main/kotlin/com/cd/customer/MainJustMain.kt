@@ -1,14 +1,7 @@
 package com.cd.customer
 
-import org.springframework.http.HttpHeaders
 import org.springframework.http.HttpMethod
-import org.springframework.http.MediaType
 import org.springframework.web.reactive.function.client.WebClient
-import java.util.*
-import org.springframework.web.reactive.function.BodyInserters
-import reactor.core.publisher.Mono
-import java.io.File
-import java.util.logging.Logger
 
 class ThingParser (val stre:String ){
     operator fun invoke(str:String){

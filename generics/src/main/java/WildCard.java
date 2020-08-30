@@ -1,10 +1,7 @@
-import org.apache.commons.lang3.ArrayUtils;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.io.Serializable;
+import java.util.*;
 
 
 class MySuper {
@@ -19,13 +16,13 @@ class MySuper {
       }
 }
 
-class Rectangle extends Shape {
+class Rectangle extends Shape implements Serializable {
     void draw() {
         System.out.println("drawing rectangle");
     }
 }
 
-class Circle extends Shape {
+class Circle extends Shape implements Serializable  {
     void draw() {
         System.out.println("drawing circle");
     }
@@ -52,38 +49,53 @@ class GenericTest {
 
     }
 
+    public static<T> T temp(T t){
+        if(t instanceof Circle){
+            System.out.println("true");
+
+        }else{
+            System.out.println("false");
+        }
+        return t;
+    }
+
     public static void main(String args[]) throws InterruptedException, IOException {
-        List<Rectangle> rectangleList = new ArrayList<>();
-        rectangleList.add(new Rectangle());
+        Optional<String> optional = Optional.ofNullable("fff");
 
-        List<Circle> circleList = new ArrayList<>();
-        circleList.add(new Circle());
+        if (optional.isPresent()) System.out.println("true");
+        else System.out.println(false);
 
-        List<MySuper> mySuperList = new ArrayList<>();
-        mySuperList.add(new MySuper());
-
-        drawShapes(circleList);
-//        drawShapes(mySuperList);
-        processElements(mySuperList);
-//        processElements(rectangleList);
-
-        addToArray(new Rectangle());
-        GenericArray<Shape, Shape> shapeCircleGenericArray = new GenericArray<>();
-        Shape circle = shapeCircleGenericArray.get(new Shape(), new Circle());
-
-        shapeCircleGenericArray.copy(circleList,rectangleList);
-        //List of Integers
-        List<Integer> ints = Arrays.asList(1,2,3,4,5);
-        System.out.println(GenericArray.sum(ints));
-
-        //List of Doubles
-        List<Double> doubles = Arrays.asList(1.5d,2d,3d);
-        System.out.println(GenericArray.sum(doubles));
-
-        List<String> strings = Arrays.asList("1","2");
-        //This will give compilation error as :: The method sum(List<? extends Number>) in the
-        //type GenericsExample<T> is not applicable for the arguments (List<String>)
-        System.out.println(GenericArray.sum(strings));
+//        List<Rectangle> rectangleList = new ArrayList<>();
+//        rectangleList.add(new Rectangle());
+//
+//        List<Circle> circleList = new ArrayList<>();
+//        circleList.add(new Circle());
+//
+//        List<MySuper> mySuperList = new ArrayList<>();
+//        mySuperList.add(new MySuper());
+//
+//        drawShapes(circleList);
+////        drawShapes(mySuperList);
+//        processElements(mySuperList);
+////        processElements(rectangleList);
+//
+//        addToArray(new Rectangle());
+//        GenericArray<Shape, Shape> shapeCircleGenericArray = new GenericArray<>();
+//        Shape circle = shapeCircleGenericArray.get(new Shape(), new Circle());
+//
+//        shapeCircleGenericArray.copy(circleList,rectangleList);
+//        //List of Integers
+//        List<Integer> ints = Arrays.asList(1,2,3,4,5);
+//        System.out.println(GenericArray.sum(ints));
+//
+//        //List of Doubles
+//        List<Double> doubles = Arrays.asList(1.5d,2d,3d);
+//        System.out.println(GenericArray.sum(doubles));
+//
+//        List<String> strings = Arrays.asList("1","2");
+//        //This will give compilation error as :: The method sum(List<? extends Number>) in the
+//        //type GenericsExample<T> is not applicable for the arguments (List<String>)
+//        System.out.println(GenericArray.sum(strings));
 
 
     }

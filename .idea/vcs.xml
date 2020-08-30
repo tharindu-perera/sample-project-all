@@ -3,5 +3,8 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Git-Gradle-Testing/GIT" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/LDAP/user-management-ldap-service" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/LDAP/user-management-services" vcs="Git" />
   </component>
 </project>

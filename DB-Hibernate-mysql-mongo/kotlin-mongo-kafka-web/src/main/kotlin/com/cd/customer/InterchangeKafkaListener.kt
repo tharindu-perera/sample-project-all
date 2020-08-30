@@ -2,11 +2,8 @@ package com.cd.customer
 
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import com.jayway.jsonpath.JsonPath
-import org.json.JSONObject
 import org.springframework.kafka.annotation.KafkaListener
 import org.springframework.stereotype.Component
-import reactor.core.publisher.Mono
 import java.util.concurrent.atomic.AtomicLong
 
 @Component
